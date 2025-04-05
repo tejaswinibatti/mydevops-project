@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Demo Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevOps Demo Web App</h1>
+            <p class="subtitle">Deployed through AWS CI/CD Pipeline</p>
+        </header>
+        
+        <main>
+            <section class="info-card">
+                <h2>About This Project</h2>
+                <p>This is a simple web application that demonstrates an automated CI/CD pipeline using:</p>
+                <ul>
+                    <li>GitHub for source control</li>
+                    <li>Jenkins for continuous integration</li>
+                    <li>AWS EC2 for hosting</li>
+                </ul>
+                <p>The application is automatically deployed whenever changes are pushed to the repository.</p>
+            </section>
+            
+            <section class="status-card">
+                <h2>Deployment Status</h2>
+                <div id="deployment-info">
+                    <p><strong>Version:</strong> <span id="version">1.0.0</span></p>
+                    <p><strong>Build Date:</strong> <span id="build-date">Loading...</span></p>
+                    <p><strong>Server Status:</strong> <span id="server-status">Checking...</span></p>
+                </div>
+                <button id="check-status">Refresh Status</button>
+            </section>
+        </main>
+        
+        <footer>
+            <p>DevOps CI/CD Pipeline Demo &copy; <span id="current-year"></span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
