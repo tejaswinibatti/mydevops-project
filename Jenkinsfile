@@ -2,21 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/tejaswinibatti/mydevops-project.git'
+                git 'https://github.com/tejaswinibatti/mydevops-project.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'echo "Building the application..."'
+                echo 'Building the application...'
+                // Add any build steps if needed
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy to S3') {
             steps {
-                sh 'echo "Deploying the application..."'
+                script {
+                    echo 'Deploying to S3...'
+                    sh 'aws s3 sync . s3://myystaticwebsitebuc/ --delete'
+                }
             }
         }
     }
